@@ -80,8 +80,11 @@ public class CreatePostServlet extends HttpServlet {
         post.setPublishedDate(date);
         post.setImportance(importance);
         
+        List<Category> categories = new ArrayList<>();
         String[] categoryIds = request.getParameterValues("categories");
-        List<Category> categories = getCategories(categoryIds);
+        if (categoryIds != null && categoryIds.length > 0) {
+            categories = getCategories(categoryIds);
+        }
         
         post.setCategories(categories);
         
