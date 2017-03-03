@@ -5,7 +5,7 @@
  */
 package sessionbeans;
 
-import entities.Post;
+import entities.Category;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Marek
  */
 @Stateless
-public class PostFacade extends AbstractFacade<Post> implements PostFacadeLocal {
+public class CategoryFacade extends AbstractFacade<Category> implements CategoryFacadeLocal {
 
     @PersistenceContext(unitName = "Blog-ejbPU")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class PostFacade extends AbstractFacade<Post> implements PostFacadeLocal 
         return em;
     }
 
-    public PostFacade() {
-        super(Post.class);
+    public CategoryFacade() {
+        super(Category.class);
     }
     
 }

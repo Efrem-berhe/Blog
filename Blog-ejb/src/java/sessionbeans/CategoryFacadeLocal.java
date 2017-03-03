@@ -5,7 +5,7 @@
  */
 package sessionbeans;
 
-import entities.Post;
+import entities.Category;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -14,19 +14,19 @@ import javax.ejb.Local;
  * @author Marek
  */
 @Local
-public interface PostFacadeLocal {
+public interface CategoryFacadeLocal {
 
-    void create(Post post);
+    void create(Category category);
 
-    void edit(Post post);
+    void edit(Category category);
 
-    void remove(Post post);
+    void remove(Category category);
 
-    Post find(Object id);
+    Category find(Object id);
 
-    List<Post> findAll();
+    List<Category> findAll();
 
-    List<Post> findRange(int[] range);
+    List<Category> findRange(int[] range);
 
     int count();
     

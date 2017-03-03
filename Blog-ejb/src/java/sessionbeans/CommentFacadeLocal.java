@@ -5,7 +5,7 @@
  */
 package sessionbeans;
 
-import entities.Post;
+import entities.Comment;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -14,19 +14,19 @@ import javax.ejb.Local;
  * @author Marek
  */
 @Local
-public interface PostFacadeLocal {
+public interface CommentFacadeLocal {
 
-    void create(Post post);
+    void create(Comment comment);
 
-    void edit(Post post);
+    void edit(Comment comment);
 
-    void remove(Post post);
+    void remove(Comment comment);
 
-    Post find(Object id);
+    Comment find(Object id);
 
-    List<Post> findAll();
+    List<Comment> findAll();
 
-    List<Post> findRange(int[] range);
+    List<Comment> findRange(int[] range);
 
     int count();
     

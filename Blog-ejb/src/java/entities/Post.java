@@ -6,18 +6,26 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.Cacheable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 /**
  *
- * @author Avatar
+ * @author Marek
  */
 @Entity
-@Table(name = "POST")
+@Cacheable(false)
 public class Post implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -26,6 +34,68 @@ public class Post implements Serializable {
     private Long id;
     
     private String text;
+    
+    private Date publishedDate;
+    
+    @Enumerated
+    private Importance importance;
+    
+    @OneToMany(mappedBy = "post")
+    private List<Comment> comments = new ArrayList<>();
+    
+    @Embedded
+    private User user;
+    
+    @ManyToMany
+    private List<Category> categories = new ArrayList<>();
+    
+    public void addCategory(Category category) {
+        this.categories.add(category);
+    }
+
+    public Date getPublishedDate() {
+        return publishedDate;
+    }
+
+    public void setPublishedDate(Date publishedDate) {
+        this.publishedDate = publishedDate;
+    }
+
+    public Importance getImportance() {
+        return importance;
+    }
+
+    public void setImportance(Importance importance) {
+        this.importance = importance;
+    }
+    
+    
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+    
+    
 
     public String getText() {
         return text;
@@ -35,7 +105,6 @@ public class Post implements Serializable {
         this.text = text;
     }
     
-
     public Long getId() {
         return id;
     }
@@ -67,6 +136,16 @@ public class Post implements Serializable {
     @Override
     public String toString() {
         return "entities.Post[ id=" + id + " ]";
+    }
+    
+    public boolean hasCategory(Long categoryId) {
+        for (Category category : categories) {
+            if (category.getId().equals(categoryId)) {
+                return true;
+            }
+        }
+        
+        return false;
     }
     
 }
