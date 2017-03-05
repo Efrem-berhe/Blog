@@ -6,14 +6,17 @@
 package sessionbeans;
 
 import entities.Post;
+import interceptors.LoggingInterceptor;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
+import javax.interceptor.Interceptors;
 
 /**
  *
  * @author Marek
  */
 @Stateful
+@Interceptors ({LoggingInterceptor.class})
 public class LikePostBean implements LikePostBeanLocal {
 
     private boolean alreadyLiked = false;
