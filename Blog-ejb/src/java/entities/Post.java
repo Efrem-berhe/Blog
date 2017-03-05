@@ -37,6 +37,8 @@ public class Post implements Serializable {
     
     private Date publishedDate;
     
+    private int likes = 0;
+    
     @Enumerated
     private Importance importance;
     
@@ -48,6 +50,18 @@ public class Post implements Serializable {
     
     @ManyToMany
     private List<Category> categories = new ArrayList<>();
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+    
+    public void incrementLikes() {
+        likes++;
+    }
     
     public void addCategory(Category category) {
         this.categories.add(category);

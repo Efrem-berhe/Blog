@@ -23,6 +23,8 @@
             <h3><c:out value="${post.user.firstName}"/> <c:out value="${post.user.lastName}"/></h3>
             <c:out value="${post.publishedDate}"/> - <c:out value="${post.importance}"/><br>
             <c:out value="${post.text}"/><br>
+            <c:out value="${post.likes}"/> Likes
+            <a href="LikePost?postId=${post.id}">Like this post</a><br>
             <c:forEach items="${post.comments}" var="comment">
                 <span>&nbsp; &nbsp; - &nbsp; &nbsp; <c:out value="${comment.text}"/></span><br>
             </c:forEach>
