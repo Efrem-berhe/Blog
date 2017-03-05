@@ -8,6 +8,10 @@
 <jsp:attribute name="body">
     
     <div>
+        This page was visited <c:out value="${visits}"/> times
+    </div>
+    
+    <div>
         <a href="Posts">All</a>
         <c:forEach items="${categories}" var="category">
              | <span><a href="Posts?category=${category.id}"><c:out value="${category.name}"></c:out></a></span>

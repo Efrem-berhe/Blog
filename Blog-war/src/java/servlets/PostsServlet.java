@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import sessionbeans.CategoryFacadeLocal;
 import sessionbeans.CommentFacadeLocal;
 import sessionbeans.PostFacadeLocal;
+import sessionbeans.TotalPageVisitsBeanLocal;
 
 /**
  *
@@ -38,6 +39,9 @@ public class PostsServlet extends HttpServlet {
     
     @EJB
     private CategoryFacadeLocal categoryFacade;
+    
+    @EJB
+    private TotalPageVisitsBeanLocal totalPageVisitsBean;
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -59,6 +63,8 @@ public class PostsServlet extends HttpServlet {
         
         List<Category> categories = categoryFacade.findAll();
         request.setAttribute("categories", categories);
+        
+        request.setAttribute("visits", getVisits());
         
         RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/posts.jsp");
         view.forward(request, response);
@@ -85,4 +91,8 @@ public class PostsServlet extends HttpServlet {
         return filteredPosts;
     }
 
+    private int getVisits() {
+        totalPageVisitsBean.incrementVisits();
+        return totalPageVisitsBean.getNumberOfTotalVisits();
+    }
 }

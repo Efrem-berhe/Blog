@@ -89,4 +89,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-dist
+Blog-ejb/dist/Blog-ejb.jar
+Blog-war/dist/Blog-war.war
