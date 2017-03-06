@@ -29,6 +29,7 @@
             <c:out value="${post.text}"/><br>
             <c:out value="${post.likes}"/> Likes
             <a href="LikePost?postId=${post.id}">Like this post</a><br>
+            <a href="DeletePost?postId=${post.id}">Delete this post</a><br>
             <c:forEach items="${post.comments}" var="comment">
                 <span>&nbsp; &nbsp; - &nbsp; &nbsp; <c:out value="${comment.text}"/></span><br>
             </c:forEach>
