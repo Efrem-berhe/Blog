@@ -5,10 +5,12 @@
         <group>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/sessionbeans/LikePostBeanLocal.java</file>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/entities/Category.java</file>
+            <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/timers/OldPostsDeletingBean.java</file>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/sessionbeans/AbstractFacade.java</file>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/sessionbeans/TotalPageVisitsBean.java</file>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/sessionbeans/CategoryFacade.java</file>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/sessionbeans/CommentFacadeLocal.java</file>
+            <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/interceptors/LoggingInterceptor.java</file>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/sessionbeans/CategoryFacadeLocal.java</file>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/java/entities/Post.java</file>
             <file>file:/C:/Users/Adolf/Desktop/Škola/8.%20semester/distributed/Blog/Blog/Blog-ejb/src/conf/MANIFEST.MF</file>
