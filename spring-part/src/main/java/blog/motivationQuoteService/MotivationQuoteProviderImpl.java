@@ -1,4 +1,6 @@
-package blog.model;
+package blog.motivationQuoteService;
+
+import blog.model.MotivationQuote;
 
 import javax.inject.Named;
 import java.util.ArrayList;
@@ -13,9 +15,9 @@ public class MotivationQuoteProviderImpl implements MotivationQuoteProvider {
 	private List<MotivationQuote> quotes = new ArrayList<MotivationQuote>();
 
 	public MotivationQuoteProviderImpl() {
-		quotes.add(new MotivationQuote("The Way Get Started Is To Quit Talking And Begin Doing.", "Walt Disney"));
-		quotes.add(new MotivationQuote("The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees The Opportunity In Every Difficulty.", "Winston Churchill"));
-		quotes.add(new MotivationQuote("Don’t Let Yesterday Take Up Too Much Of Today.", "Will Rogers"));
+		quotes.add(new MotivationQuote("The Way Get Started Is To Quit Talking And Begin Doing.", "Walt Disney", 1950));
+		quotes.add(new MotivationQuote("The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees The Opportunity In Every Difficulty.", "Winston Churchill", 1935));
+		quotes.add(new MotivationQuote("Dont Let Yesterday Take Up Too Much Of Today.", "Will Rogers", 1900));
 	}
 
 	public List<MotivationQuote> getAll() {

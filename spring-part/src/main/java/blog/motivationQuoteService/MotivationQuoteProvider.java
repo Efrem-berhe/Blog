@@ -1,4 +1,6 @@
-package blog.model;
+package blog.motivationQuoteService;
+
+import blog.model.MotivationQuote;
 
 import java.util.List;
 
