@@ -91,5 +91,3 @@ $RECYCLE.BIN/
 
 Blog-ejb/dist/Blog-ejb.jar
 Blog-war/dist/Blog-war.war
-/Blog-ejb/dist/
-/Blog-war/dist/
