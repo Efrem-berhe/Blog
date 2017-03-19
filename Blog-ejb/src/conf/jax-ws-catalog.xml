@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/PostLikesCountRetriever/PostLikesCountRetriever?wsdl" uri="wsdl/localhost_8080/PostLikesCountRetriever/PostLikesCountRetriever.wsdl"/>
+    <system systemId="http://localhost:8080/PostLikesCountRetriever/PostLikesCountRetriever?xsd=1" uri="wsdl/localhost_8080/PostLikesCountRetriever/PostLikesCountRetriever.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/PostLikesRetriever/PostLikesRetriever?wsdl" uri="wsdl/localhost_8080/PostLikesRetriever/PostLikesRetriever.wsdl"/>
+    <system systemId="http://localhost:8080/PostLikesRetriever/PostLikesRetriever?xsd=1" uri="wsdl/localhost_8080/PostLikesRetriever/PostLikesRetriever.xsd_1.xsd"/>
+</catalog>
