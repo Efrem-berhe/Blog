@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0129)https://p.cygnus.cc.kuleuven.be/bbcswebdav/pid-19120455-dt-content-rid-84306557_3/orgs/C130069-B-1617/MVC%20Framework%281%29.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>MVC Framework</title>
+
+</head>
+<body>
+<div id="header">
+Distributed Applications<br>
+KU Leuven - Campus Groep T<br>
+2016-2017<br>
+</div>
+<div id="groupmembers">
+<ul>
+<li>Marek Turis</li>
+<li>Vadim Janovskij</li>
+<li>Efrem Gebremedhin</li>
+</ul>
+</div>
+<h1>Spring MVC</h1>
+<h2>Short description</h2>
+<p>Most popular MVC framework, built on top of Spring IoC framework</p>
+<h2>Technical features</h2>
+<h3>MVC solution</h3>
+<p>Spring uses Front Controller to handle all incoming requests. Requests are than routed and forwared to actual Controller (implemented by developer) which is reponsible for handling given request. Controller then uses model to perform specific action or to get some data. In the end controller decides what should the response be. Usually it chooses name of the view which should be returned. Controll is then returned back to Front Controller which returns appropriate response (e.g. renders views, returns redirect, ...) </p>
+<h3>Navigation</h3>
+<p>Enabled through spring sub-project Spring Web Flow (SWF). It focuses on providing infrastructure for building rich web applications. Main use cases are expressing page navigation rules and managing of navigation and conversational state.</p>
+<h3>Form handling</h3>
+<p>There is a special form jsp tag to work with forms. The form can be created to look like a Bean (or also called DTO or (incorrectly) Model) we want to map it to. In the controller it is enough to use an annotation @ModelAttribute for a parameter and values posted from a form are automaticaly mapped to given parameter</p>
+
+<h3>Validation</h3>
+<p>Spring allows to use javax.validation.constraints annotations on a bean. Bean is then automatically validated by @Valid annotation when the bean is passed as a parameter to controller method. It is also possible to create custom validation class for a specific bean</p>
+
+<h4>Example of form handling with validation</h4>
+
+<span>Form</span>
+<code style="white-space: pre">
+&lt;form:form method="post" action="${pageContext.request.contextPath}/area/create" modelAttribute="beanName" cssClass="form-horizontal"&gt;
+	&lt;form:input path="age" cssClass="form-control" required="required"/&gt;
+	&lt;button class="btn btn-primary" type="submit">Create Area&lt;/button&gt;
+&lt;/form:form&gt;
+</code>
+<br>
+<span>Bean (DTO)</span>
+<code style="white-space: pre">
+public class SomeBean {
+
+	@NotNull
+	@Min(18)
+	private Integer age;
+
+	public Integer getAge() { return age; }
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+}
+</code>
+<br>
+<span>Controller</span>
+<code style="white-space: pre">
+@Controller
+@RequestMapping("/someUrl")
+public class SomeController {
+	@RequestMapping(value = "/otherUrl", method = RequestMethod.POST)
+	public String create(@Valid @ModelAttribute("monsterCreate") SomeBean beanName) {
+		// beanName is filled with inputs from form here
+	}
+}
+</code>
+
+<h3>Type conversion</h3>
+<p>Conversion from a form to concrete bean is possible as described in Form handling part</p>
+<h3>Server-side handling of user interface events</h3>
+<p>Every user action is represented as common POST or GET request and then handled by a controller method associated with given request url</p>
+<h3>Rendering</h3>
+<p>Views are rendered automatically by Spring and there is no special code needed to write. Only required thing to do to render a specific views is to return name of a views as a String from a controller method. If  there is a need to pass a variable from a controller to view, controller method should have a Model class as a parameter (it will be injected automatically) and in the method set a parameter on this class. Variable is then automatically available in jsp</p>
+<h3>I18N and L10N</h3>
+<p>To support more locales, property files are created, one for every language. Then in jsp general key is used (not specific for language) and spring chooses the right language to display the message in</p>
+<h3>JavaScript integration</h3>
+<p>There is spring-js sub-project which provides abstraction over common JavaScript toolkits. It provides programming model to enhance a web page with rich widget behavior and Ajax remoting</p>
+<h2>Documentation</h2>
+<h3>Kind of documentation, quality, up-todate</h3>
+<p>Documentation is very detailed and keeped up-to-date.</p>
+<h3>Community activity</h3>
+<p>Thanks to the popularity of spring, community is very big and there are lot of resource to learn from. Also lot of problems which could be encountered while using spring where already solved on sites like stackoverflow</p>
+<h2>Future evolution</h2>
+<p>Spring is still developed. Ammount of changed lines per month is almost the same for last few years so it is very likely that developement won't be stoped very soon.</p>
+<h2>Your perception</h2>
+<p>My opinion may be biased because it is the first framework I learned and used. But I like the framework mainly because of its ease to use. You can get it running quite fast, and implementing basic functionality is very quick, there is almost none boilerplate needed to write. Also the community support is very good and finding solution to almost all problems is very fast</p>
+<h3>Ease of use</h3>
+<p>After the initial configuration it is very easy to use framework. Only needed things to implement are Controller (method), jsp and form bean if needed. Mapping among those is done automatically </p>
+<h3>Ease of installation</h3>
+<p>
+Installation itself with maven is very simple, only thing needed is to add few lines to pom.xml file.
+Configuration might be more difficult to do by hand, but it is almost same for every project, so it can be copied from other projects.
+</p>
+<h3>Learning curve</h3>
+<p>
+To learn spring mvc on basic level should not be too difficult. However learning how spring mvc works under the hood can be more tricky since the process itself is quite complex.
+</p>
+<h2>Practical information</h2>
+<h3>Website</h3>
+<p>spring.io</p>
+<h3>Download</h3>
+<p>Best option: with maven <br>
+https://mvnrepository.com/artifact/org.springframework/spring-webmvc</p>
+</body></html>
